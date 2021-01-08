@@ -9,7 +9,7 @@ public class InstanceObject : MonoBehaviour
     public GameObject obj;
     public void instanceNewObject()
     {
-        GameObject nobj = Instantiate(obj, parent.transform.position, Quaternion.identity);
+        GameObject nobj = Instantiate(obj, parent.transform.position + parent.transform.up, parent.transform.rotation/*Quaternion.identity*/);
         nobj.transform.parent = parent.transform;
         nobj.GetComponent<MouseDrag>().cam = cam;
         nobj.tag = "Deleteable";
